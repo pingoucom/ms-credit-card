@@ -1,4 +1,4 @@
-package com.pingou.mscreditcard.mscreditcard.model;
+package com.pingou.mscreditcard.model;
 
 import jakarta.persistence.*;
 import lombok.*;

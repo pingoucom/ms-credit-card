@@ -1,7 +1,7 @@
-package com.pingou.mscreditcard.mscreditcard.util;
+package com.pingou.mscreditcard.util;
 
-import com.pingou.mscreditcard.mscreditcard.model.CreditCard;
-import com.pingou.mscreditcard.mscreditcard.model.CreditCardDto;
+import com.pingou.mscreditcard.model.CreditCard;
+import com.pingou.mscreditcard.model.CreditCardDto;
 
 
 public class Utill {

@@ -1,9 +1,9 @@
-package com.pingou.mscreditcard.mscreditcard.service;
+package com.pingou.mscreditcard.service;
 
-import com.pingou.mscreditcard.mscreditcard.model.CreditCard;
-import com.pingou.mscreditcard.mscreditcard.model.CreditCardDto;
-import com.pingou.mscreditcard.mscreditcard.repository.CreditCardRepository;
-import com.pingou.mscreditcard.mscreditcard.util.Utill;
+import com.pingou.mscreditcard.model.CreditCard;
+import com.pingou.mscreditcard.model.CreditCardDto;
+import com.pingou.mscreditcard.repository.CreditCardRepository;
+import com.pingou.mscreditcard.util.Utill;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +20,9 @@ public class CreditCardService {
     }
 
     public List<CreditCardDto> getAllCreditCardsByUser(String id) {
-        List<CreditCardDto> creditCards = creditCardRepository.findAll();
-        return creditCards.stream().filter(creditCard -> creditCard.getIdUser().equals(id)).toList();
+        return creditCardRepository.findAllByIdUser(id);
     }
+
     public CreditCardDto getCreditCardById(String id) {
         return creditCardRepository.findById(id).orElse(null);
     }

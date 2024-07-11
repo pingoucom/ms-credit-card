@@ -1,9 +1,9 @@
-package com.pingou.mscreditcard.mscreditcard.controller;
+package com.pingou.mscreditcard.controller;
 
 
-import com.pingou.mscreditcard.mscreditcard.model.CreditCard;
-import com.pingou.mscreditcard.mscreditcard.model.CreditCardDto;
-import com.pingou.mscreditcard.mscreditcard.service.CreditCardService;
+import com.pingou.mscreditcard.model.CreditCard;
+import com.pingou.mscreditcard.model.CreditCardDto;
+import com.pingou.mscreditcard.service.CreditCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +25,10 @@ public class CreditCardController {
     }
 
 
-    @PostMapping
-    public CreditCardDto createCreditCard(@RequestBody CreditCard creditCard) {
+    @PostMapping("/user/{id}")
+    public CreditCardDto createCreditCard(@RequestBody CreditCard creditCard, @PathVariable String id) {
+        creditCard.setIdUser(id);
+
         return creditCardService.createCreditCard(creditCard);
     }
 
